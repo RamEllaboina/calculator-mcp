@@ -1,9 +1,12 @@
+import os
 from mcp.server.fastmcp import FastMCP
+
+port = int(os.environ.get("PORT", 8001))
 
 mcp = FastMCP(
     "Calculator",
-    host="127.0.0.1",
-    port=8001
+    host="0.0.0.0",
+    port=port
 )
 
 last_sum = None
